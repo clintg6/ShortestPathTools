@@ -36,15 +36,23 @@ If you have already created a single layer white matter parcellation, you can en
 
 ```
 from spt import SPT
-spt = SPT(voxel_graph, filename path to white matter parcellation)
+parc_fn = "full path to parcellation file"
+spt = SPT(voxel_graph, parc_fn)
 ```
 
 ## Save voxel graph edgelist
 To enable the shortest paths to be computed in a parallel manner, you must first save the voxel graph out in edgelist format so that it can be loaded by the node/pool workers because the voxel graph cannot be pickled. To do this simply run the following command:
 ```
+edgelist_fn = "full path to where edge list is to be saved"
 spt.writeEdgelist(edgelist_fn)
 ```
 
+If you have already created an edgelist, you can enter the following command to prepare for the shortest path computation.
+
+```
+from spt import SPT
+spt = SPT(voxel_graph, parc_fn, edgelist_fn)
+```
 ## Finding Shortest Paths
 Now that the Voxel Graph and its edgelist and the white matter parcellation have been created, they can be input into our toolbox to generate whole brain shortest paths and construct shortest path probability weighted connectomes and disconnectomes.
 
@@ -57,7 +65,7 @@ spt.findPaths() # find the shortest paths between the source target pairs
 To construct a shortest-path probability weighted connectome run the following command:
 ```
 spt.computeConnectome()
-
+```
 ## Constructing a disconnectome
 To construct a disconnectome, run the following command and specify the path to a patient's lesion mask.
 ```
