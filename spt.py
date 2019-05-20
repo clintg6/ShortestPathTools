@@ -4,7 +4,7 @@ import networkx as nx
 import nibabel as nib
 import multiprocessing as mp
 from scipy.interpolate import UnivariateSpline
-from .utils import poolCN, pathFinder, Utils
+from utils import poolCN, pathFinder, Utils
 
 numProcs = mp.cpu_count()
 pool = mp.Pool(processes=numProcs)
