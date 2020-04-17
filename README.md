@@ -1,3 +1,5 @@
+![mds](img/mds_visualization.png)
+
 # Shortest Path Brain Connectivity Tools 
 
 This package contains fast, accurate, and robust tools for studying white matter connectivity. Tools include methods for rapidly generating shortest paths for the whole brain in white matter voxel graphs, parcellating white matter at the gray-white interface with a cortical parcellation, constructing shortest-path probability weighted structural connectomes and disconnectomes, and finding maximally disconnected subnetworks in disconnectomes. If you find any of our tools useful in your research, please cite us: [Coming soon.](https://www.mitpressjournals.org/doi/abs/10.1162/NETN_a_00035)
